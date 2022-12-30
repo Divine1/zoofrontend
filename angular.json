@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/socket.io/client-dist/socket.io.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -67,8 +69,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "sslKey" :"privatekey.pem",
+          "sslCert" : "publickey.pem",
           "options": {
-            "browserTarget": "zoofrontend:build"
+            "browserTarget": "zoofrontend:build",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {
